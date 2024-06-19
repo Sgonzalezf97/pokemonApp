@@ -1,0 +1,24 @@
+<!-- <li *ngFor="let item of pokemons?.results">{{item.name}}</li> -->
+<!-- <li *ngFor="let item of pokemons?.results">
+    <a href="/pokemon/{{item.name}}">{{item.name}}</a>
+  </li> -->
+<div class="flex col-12">
+  <div class="col-2" *ngFor="let item of pokemons?.results">
+    <mat-card appearance="outlined">
+      <mat-card-header>
+        <mat-card-title *ngIf="pokemons">{{item.name}}</mat-card-title>
+        <!-- <mat-card-subtitle *ngIf="pokemons">{{pokemons.id}}</mat-card-subtitle> -->
+      </mat-card-header>
+      <!-- <img mat-card-image *ngIf="pokemons" src={{pokemons.sprites.front_default}} alt="Ajani"> -->
+      <mat-card-content>
+        <!-- <p>Este es el texto de contenido</p>
+        <ul>
+          <li *ngFor="let item of pokemons?.abilities">{{item.ability.name}}</li>
+        </ul> -->
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button><a href="/pokemon/{{item.name}}">view</a></button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

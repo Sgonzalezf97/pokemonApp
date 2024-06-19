@@ -1,0 +1,25 @@
+
+<div class="col-4">
+  <mat-card appearance="outlined">
+    <mat-card-header>
+      <mat-card-title *ngIf="pokemons">{{pokemons.name}}</mat-card-title>
+      <mat-card-subtitle *ngIf="pokemons">{{pokemons.id}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image *ngIf="pokemons" src={{pokemons.sprites.front_default}} alt="Ajani">
+    <mat-card-content>
+      <p>Este es el texto de contenido</p>
+      <ul>
+        <li *ngFor="let item of pokemons?.abilities">{{item.ability.name}}</li>
+      </ul>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<div>
+  <!-- <p *ngIf="pokemons">{{pokemons.name}}</p> -->
+</div>
+
