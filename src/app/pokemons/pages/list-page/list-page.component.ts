@@ -17,4 +17,8 @@ export class ListPageComponent {
       this.pokemonCallService.listPokemon().subscribe(pokemons => this.pokemons = pokemons);
   }
 
+  redirectPokemon(pokemon:any){
+    location.href="/pokemon/"+pokemon;
+  }
+
 }

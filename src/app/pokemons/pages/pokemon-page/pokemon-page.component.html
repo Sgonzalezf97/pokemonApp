@@ -1,24 +1,31 @@
 
-<div class="col-4">
+<div class="col-2">
   <mat-card appearance="outlined">
     <mat-card-header>
-      <mat-card-title *ngIf="pokemons">{{pokemons.name}}</mat-card-title>
-      <mat-card-subtitle *ngIf="pokemons">{{pokemons.id}}</mat-card-subtitle>
+      <mat-card-title *ngIf="pokemons">{{pokemons.id}} - {{pokemons.name | titlecase}}</mat-card-title>
     </mat-card-header>
-    <img mat-card-image *ngIf="pokemons" src={{pokemons.sprites.front_default}} alt="Ajani">
+    <img mat-card-image *ngIf="pokemons" src={{pokemons.sprites.front_default}} alt={{pokemons.name}}>
+    <!-- <img mat-card-image *ngIf="pokemons" src={{pokemons.sprites.other?.showdown?.front_default}} alt={{pokemons.name}}> -->
     <mat-card-content>
-      <p>Este es el texto de contenido</p>
+      <h3><b> Types</b></h3>
+      <ul [ngStyle]="{'display':'flex'}">
+        <li class="col-2" *ngFor="let item of pokemons?.types">{{item.type.name}}</li>
+      </ul>
+      <h3><b>Stats</b></h3>
       <ul>
-        <li *ngFor="let item of pokemons?.abilities">{{item.ability.name}}</li>
+        <li *ngFor="let item of pokemons?.stats">{{item.stat.name}} - {{item.base_stat}}</li>
+      </ul>
+      <h3><b>Moves</b></h3>
+      <ul>
+        <li *ngFor="let item of pokemons?.moves | slice:0:4">{{item.move.name}}</li>
       </ul>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
+      <button mat-button mat-flat-button color="accent">LIKE</button>
+      <button [ngStyle]="{'margin-left':'1rem'}"mat-button mat-flat-button color="warn" (click)="redirectList()"> RETURN</button>
     </mat-card-actions>
   </mat-card>
 </div>
-
 <div>
   <!-- <p *ngIf="pokemons">{{pokemons.name}}</p> -->
 </div>

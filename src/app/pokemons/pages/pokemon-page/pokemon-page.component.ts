@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { PokemonI } from '../../interfaces/pokemon.interface';
 import { PokemonCallService } from '../../services/pokemon-call.service';
-import { ActivatedRoute, Router} from '@angular/router';
+import { ActivatedRoute, Router, RouterLink} from '@angular/router';
 import { switchMap } from 'rxjs';
 
 @Component({
@@ -38,7 +38,9 @@ export class PokemonPageComponent implements OnInit{
       });
       // subscribe(pokemons => this.pokemons = pokemons) )
       // Entender esta parte
+  }
 
-
+  redirectList():void{
+    location.href="/pokemon/search"
   }
 }

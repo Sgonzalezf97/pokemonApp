@@ -14,7 +14,7 @@ const routes: Routes = [
       {path: 'list',component: ListPageComponent},
       {path: 'search',component: SearchPageComponent},
       {path: ':id',component: PokemonPageComponent},
-      {path: '**',redirectTo: 'list'},
+      {path: '**',redirectTo: 'search'},
     ]
   }
 

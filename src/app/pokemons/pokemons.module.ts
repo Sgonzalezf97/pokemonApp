@@ -7,6 +7,8 @@ import { ListPageComponent } from './pages/list-page/list-page.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { PokemonPageComponent } from './pages/pokemon-page/pokemon-page.component';
 import { MaterialModule } from '../material/material.module';
+import { ExtractIndexPipe } from './pipes/extract-index.pipe';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -14,12 +16,14 @@ import { MaterialModule } from '../material/material.module';
     LayoutPageComponent,
     ListPageComponent,
     SearchPageComponent,
-    PokemonPageComponent
+    PokemonPageComponent,
+    ExtractIndexPipe
   ],
   imports: [
     CommonModule,
     PokemonsRoutingModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ]
 })
 export class PokemonsModule { }
