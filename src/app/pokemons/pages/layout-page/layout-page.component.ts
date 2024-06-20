@@ -9,7 +9,7 @@ export class LayoutPageComponent {
 
   public sidebarItems = [
     // {label: 'Listado', icon:'label', url:'./list'},
-    {label: 'Buscar', icon:'search', url:'./search'},
+    {label: 'Search', icon:'search', url:'./search'},
   ]
 
 }
