@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>{{data.title}}</h1>
+<div mat-dialog-content>
+  <p>{{data.text}}</p>
+  @if (data.name) {
+    <p>El nombre del pokémon es: {{data.name}}</p>
+  }
+</div>
+<mat-dialog-actions>
+  <!-- <button mat-button mat-flat-button (click)="onNoClick()" color="warn">No Thanks</button> -->
+  <span class="spacer"></span>
+  <button mat-button mat-flat-button (click)="onConfirm()" cdkFocusInitial color="primary">Ok</button>
+</mat-dialog-actions>

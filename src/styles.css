@@ -18,3 +18,19 @@ a {
   display: flex;
   justify-content: center;
 }
+
+.d-flex{
+  display: flex !important;
+}
+
+.scoreBoard{
+  background-color: #ECECEC;
+  border-radius: 1%;
+}
+
+.pokemon-background{
+  background-image: url("../src/assets/pokemon-background.png");
+  background-repeat: round ;
+  background-size: contain;
+}
+
