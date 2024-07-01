@@ -1,0 +1,64 @@
+<div>
+
+  <div class="col-4 m-auto">
+    <mat-card [ngClass]="'pokemon-background'">
+      <mat-card-title [ngClass]="'m-auto'">
+        <!-- Pokémon -->
+      </mat-card-title>
+      <mat-card-content [ngClass]="'col-6'">
+        @if (pokemons) {
+          <img [ngClass]="'m-auto'" style="display: flex;width: 250px;" mat-card-image
+          src="{{pokemons.sprites.front_default}}" >
+        }
+        <!-- <h3><b>¿Cual es ese pokémon?</b></h3> -->
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="col-4 m-auto">
+    <mat-form-field class="m-3 d-flex">
+      <mat-label>Search Pokémon</mat-label>
+      <input type="text" matInput [formControl]="searchInput" (input)="searchPokemon()" [matAutocomplete]="auto"/>
+      <mat-autocomplete autoActiveFirstOption
+        #auto="matAutocomplete"
+        (optionSelected)="onSelectedOption($event)"
+        >
+        <mat-option *ngFor="let poke of listPokemons" [value]="poke">
+          {{poke}}
+        </mat-option>
+        <mat-option *ngIf="listPokemons?.length === 0 && searchInput.value &&searchInput.value.length > 0">
+          No se encontró nada con el término {{searchInput.value}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </div>
+
+
+  <div class="col-4 m-auto m-2 d-flex" id="vidas" style="flex-direction: row-reverse;">
+    @for (item of lifeAmountArray; track $index) {
+      <div>
+        <img src="../../../../assets/pokeball-removebg-preview.png" width="35px">
+      </div>
+    }
+  </div>
+
+  <mat-divider></mat-divider>
+  @if (nameList.length != 0) {
+    <div class="col-4 m-auto scoreBoard m-2">
+      @for (name of nameList; track $index) {
+        <mat-card [ngClass]="'m-3'">
+          <mat-card-title [ngClass]="'m-auto'">
+            {{name}}
+          </mat-card-title>
+        </mat-card>
+      }
+    </div>
+  }
+
+  <!-- @if(lifeAmount === 0){
+    <app-dialog ></app-dialog>
+    } -->
+    <!-- <app-dialog></app-dialog> -->
+
+
+</div>
