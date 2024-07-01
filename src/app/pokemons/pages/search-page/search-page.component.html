@@ -7,28 +7,29 @@
 
   <!-- {{searchInput.value }}
   {{searchInput.status }} -->
-
-  <div class="grid bm-8 pt-2 px-5" *ngIf="searchInput.value!=null">
-    <div class="flex" *ngFor="let item of pokemons?.results">
-      <div class="col" *ngIf="item.name.includes(searchInput.value)" [ngStyle]="{'width':'15rem','margin':'auto'}">
-        <mat-card appearance="outlined" >
-          <mat-card-header>
-            <mat-card-title *ngIf="pokemons" [ngStyle]="{
-                'margin':'auto',
-                'justify-content':'center',
-                'display': 'flex'
-                }">
-              <img src="../../../../assets/pokeball-removebg-preview.png" width="35px">{{item.url | extractIndex}} -
-              {{item.name | titlecase}}</mat-card-title>
-            <!-- <mat-card-subtitle *ngIf="pokemons">{{pokemons.id}}</mat-card-subtitle> -->
-          </mat-card-header>
-          <!-- <img mat-card-image *ngIf="pokemons" src={{pokemons.sprites.front_default}} alt="Ajani"> -->
-          <mat-divider></mat-divider>
-          <mat-card-actions>
-            <button mat-flat-button color="accent" (click)="redirectPokemon(item.name)">View</button>
-          </mat-card-actions>
-        </mat-card>
+  @if(searchInput.value!=null){
+    <div class="grid bm-8 pt-2 px-5">
+      <div class="flex" *ngFor="let item of pokemons?.results">
+        <div class="col" *ngIf="item.name.includes(searchInput.value)" [ngStyle]="{'width':'15rem','margin':'auto'}">
+          <mat-card appearance="outlined" >
+            <mat-card-header>
+              <mat-card-title *ngIf="pokemons" [ngStyle]="{
+                  'margin':'auto',
+                  'justify-content':'center',
+                  'display': 'flex'
+                  }">
+                <img src="../../../../assets/pokeball-removebg-preview.png" width="35px">{{item.url | extractIndex}} -
+                {{item.name | titlecase}}</mat-card-title>
+              <!-- <mat-card-subtitle *ngIf="pokemons">{{pokemons.id}}</mat-card-subtitle> -->
+            </mat-card-header>
+            <!-- <img mat-card-image *ngIf="pokemons" src={{pokemons.sprites.front_default}} alt="Ajani"> -->
+            <mat-divider></mat-divider>
+            <mat-card-actions>
+              <button mat-flat-button color="accent" (click)="redirectPokemon(item.name)">View</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
       </div>
     </div>
-  </div>
+  }
 </div>

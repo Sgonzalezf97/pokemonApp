@@ -9,6 +9,11 @@ import { PokemonPageComponent } from './pages/pokemon-page/pokemon-page.componen
 import { MaterialModule } from '../material/material.module';
 import { ExtractIndexPipe } from './pipes/extract-index.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
+import { GamePageComponent } from './pages/game-page/game-page/game-page.component';
+import { DialogComponent } from './components/dialog/dialog.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -17,13 +22,15 @@ import { ReactiveFormsModule } from '@angular/forms';
     ListPageComponent,
     SearchPageComponent,
     PokemonPageComponent,
-    ExtractIndexPipe
+    ExtractIndexPipe,
+    GamePageComponent,
+    DialogComponent
   ],
   imports: [
     CommonModule,
     PokemonsRoutingModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ]
 })
 export class PokemonsModule { }

@@ -6,13 +6,15 @@
   <div class="col-2" *ngFor="let item of pokemons?.results">
     <mat-card appearance="outlined">
       <mat-card-header>
-        <mat-card-title *ngIf="pokemons"
+        @if(pokemons){
+          <mat-card-title
           [ngStyle]="{
             'margin':'auto',
             'justify-content':'center',
             'display': 'flex'
             }">
             <img src="../../../../assets/pokeball-removebg-preview.png" width="35px">{{item.url | extractIndex}} - {{item.name  | titlecase}}</mat-card-title>
+        }
         <!-- <mat-card-subtitle *ngIf="pokemons">{{pokemons.id}}</mat-card-subtitle> -->
       </mat-card-header>
       <!-- <img mat-card-image *ngIf="pokemons" src={{pokemons.sprites.front_default}} alt="Ajani"> -->

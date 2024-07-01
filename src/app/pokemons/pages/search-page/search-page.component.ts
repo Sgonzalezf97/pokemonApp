@@ -32,7 +32,4 @@ export class SearchPageComponent {
     console.log({value})
   }
 
-  // onselectedoption(event: string):void{
-  //   console.log(event)
-  // }
 }
